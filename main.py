@@ -3,6 +3,8 @@ from helperfunctions import sum_two_numbers, say_hello_world
 
 from simplehelperclass import person
 import secondwaytousehelperfunctions as np #<--- can give any name for shortening the long name (used for numpy for instance)
+import catClass
+
 """
 Module Docstring
 """
@@ -23,10 +25,21 @@ def main():
 
     #instantiate a person:
     Jonh = person("John", 26)
-    Anna = person("Anna", 32)
-
-    print(Anna.introduce())
     print(Jonh.introduce())
+
+    Anna = person("Anna", 32)
+    print(Anna.introduce())
+
+    # inheritance example
+    cat = catClass.Cat("Whiskers")
+    cat.eat()
+    print("is {} hungry? {}".format(cat.name, cat.isHungry()) )
+    cat.jump()
+    print("is {} hungry? {}".format(cat.name, cat.isHungry()) )
+
+
+    
+    
 
 
 if __name__ == "__main__":
