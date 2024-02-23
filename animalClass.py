@@ -1,4 +1,5 @@
 class Animal:
+
     name = ""
     hungry = True
 
@@ -12,3 +13,5 @@ class Animal:
     
     def isHungry(self)->bool:
         return self.hungry
+    
+    

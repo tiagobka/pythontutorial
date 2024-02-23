@@ -1,45 +1,24 @@
-
-from helperfunctions import sum_two_numbers, say_hello_world
-
-from simplehelperclass import person
-import secondwaytousehelperfunctions as np #<--- can give any name for shortening the long name (used for numpy for instance)
-import catClass
-
-"""
-Module Docstring
-"""
-
-__author__ = "Your Name"
-__version__ = "0.1.0"
-__license__ = "MIT"
-
+from macro_dyn import add_two_numbers, macro_dyn
 
 def main():
-    """ Main entry point of the app """
-    say_hello_world()
+    md = macro_dyn\
+    ( 
+        phi=1,
+        g=1.0,
+        theta1=0.5
+    )
+    md.some_value = 10
 
-    np.say_hello()
-    np.say_hi()
+    md.update_params()
 
-    print(sum_two_numbers(1, 1))
+    print("psi", md.psi)
+    print("rhoxp", md.rhoxp)
+    print("rhoxm", md.rhoxm)
 
-    #instantiate a person:
-    Jonh = person("John", 26)
-    print(Jonh.introduce())
+    # since the person (Mike, 27 yo) was created(instantiated in init) you can use it
+    print(md.person.introduce())
 
-    Anna = person("Anna", 32)
-    print(Anna.introduce())
-
-    # inheritance example
-    cat = catClass.Cat("Whiskers")
-    cat.eat()
-    print("is {} hungry? {}".format(cat.name, cat.isHungry()) )
-    cat.jump()
-    print("is {} hungry? {}".format(cat.name, cat.isHungry()) )
-
-
-    
-    
+    print(add_two_numbers(5,7))
 
 
 if __name__ == "__main__":
